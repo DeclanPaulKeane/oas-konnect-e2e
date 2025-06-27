@@ -1,6 +1,16 @@
 # OAS to Kong Konnect Terraform
 
-Convert OpenAPI Specifications to Kong Konnect resources using Terraform.
+This automated workflow simplifies the process of onboarding and managing APIs in Kong Konnect, making it easier for developers to focus on building applications, not infrastructure. Most developers are already familiar with OpenAPI/Swagger. By starting with a spec they already use to design and document APIs, there’s no need to learn Kong-specific formats or configurations. This lowers the barrier to entry.
+
+This is an example, the flow is as follows:
+
+1.  Takes an OpenAPI specification
+2.  Generates the Kong configuration from it
+3.  Apply plugins (policies) to the Kong configuration
+4.  Converts the Kong configuration to Terraform
+5.  Deploys the Terraform configuration to a Kong Konnect Control Plane
+6.  Automatically adds and publish the API to the Kong Konnect Portal
+
 
 ## Prerequisites
 
@@ -9,6 +19,7 @@ Convert OpenAPI Specifications to Kong Konnect resources using Terraform.
 - [Terraform](https://www.terraform.io/)
 
 ### Environment Variables
+
 Set these before running Terraform:
 
 ```bash
@@ -50,14 +61,6 @@ terraform apply
 # Make sure environment variables are set first
 terraform destroy
 ```
-
-## What This Does
-
-- Converts `openapi.yaml` to Kong configuration
-- Adds plugins from `plugins/` directory
-- Applies patches from `patches/` directory
-- Generates Terraform configuration
-- Deploys to Kong Konnect with portal integration
 
 ## Files
 
