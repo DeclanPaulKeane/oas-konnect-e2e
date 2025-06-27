@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: HTTPBin API
+  description: A simple HTTP Request & Response Service
+  version: 1.0.0
+servers:
+  - url: https://httpbin.org
+    description: HTTPBin production server
+paths:
+  /anything:
+    get:
+      summary: Returns anything passed in request data
+      description: Returns anything that is passed to request
+      operationId: getAnything
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  args:
+                    type: object
+                    description: Query string parameters
+                  data:
+                    type: string
+                    description: Request body data
+                  files:
+                    type: object
+                    description: Files uploaded in the request
+                  form:
+                    type: object
+                    description: Form data
+                  headers:
+                    type: object
+                    description: Request headers
+                  json:
+                    type: object
+                    description: JSON data from the request body
+                  method:
+                    type: string
+                    description: HTTP method used
+                  origin:
+                    type: string
+                    description: IP address of the requester
+                  url:
+                    type: string
+                    description: URL of the request
+    post:
+      summary: Returns anything passed in request data
+      description: Returns anything that is passed to request
+      operationId: postAnything
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnythingResponse'
+    put:
+      summary: Returns anything passed in request data
+      description: Returns anything that is passed to request
+      operationId: putAnything
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnythingResponse'
+    delete:
+      summary: Returns anything passed in request data
+      description: Returns anything that is passed to request
+      operationId: deleteAnything
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnythingResponse'
+components:
+  schemas:
+    AnythingResponse:
+      type: object
+      properties:
+        args:
+          type: object
+          description: Query string parameters
+        data:
+          type: string
+          description: Request body data
+        files:
+          type: object
+          description: Files uploaded in the request
+        form:
+          type: object
+          description: Form data
+        headers:
+          type: object
+          description: Request headers
+        json:
+          type: object
+          description: JSON data from the request body
+        method:
+          type: string
+          description: HTTP method used
+        origin:
+          type: string
+          description: IP address of the requester
+        url:
+          type: string
+          description: URL of the request 

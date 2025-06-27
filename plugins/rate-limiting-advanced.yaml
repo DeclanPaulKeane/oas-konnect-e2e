@@ -1,0 +1,33 @@
+_format_version: "1.0"
+add-plugins:
+- selectors: 
+  - $..services[*]
+  overwrite: true
+  plugins: 
+  - name: rate-limiting-advanced
+    enabled: true
+    config:
+      limit:
+      - 20
+      window_size:
+      - 30
+      window_type: sliding
+  - name: cors
+    enabled: true
+    config:
+      credentials: false
+      exposed_headers: null
+      max_age: null
+      methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - OPTIONS
+      - HEAD
+      - PATCH
+      - TRACE
+      - CONNECT
+      origins:
+      - '*'
+      preflight_continue: false
