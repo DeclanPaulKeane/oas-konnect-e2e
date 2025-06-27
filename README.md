@@ -9,7 +9,7 @@ This is an example, the flow is as follows:
 3.  Apply plugins (policies) to the Kong configuration
 4.  Converts the Kong configuration to Terraform
 5.  Deploys the Terraform configuration to a Kong Konnect Control Plane
-6.  Automatically adds and publish the API to the Kong Konnect Portal
+6.  Automatically adds and publish the API to the Kong Konnect Developer Portal
 
 
 ## Prerequisites
