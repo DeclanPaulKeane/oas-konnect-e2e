@@ -5,7 +5,7 @@ This automated workflow simplifies the process of onboarding and managing APIs i
 This is an example, the flow is as follows:
 
 1.  Takes an OpenAPI specification
-2.  Generates the Kong configuration from it
+2.  Generate the Kong configuration from the OpenAPI specification
 3.  Apply plugins (policies) to the Kong configuration
 4.  Converts the Kong configuration to Terraform
 5.  Deploys the Terraform configuration to a Kong Konnect Control Plane
